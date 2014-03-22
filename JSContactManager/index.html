@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="Scripts/Third Party/jquery-1.11.0.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script type="text/javascript" src="Scripts/App/App.js"></script>
+    <script type="text/javascript" src="Scripts/App/Config.js"></script>
+    <script type="text/javascript" src="Scripts/App/Firebase.js"></script>
+    <script type="text/javascript" src="Scripts/App/Templates.js"></script>
+    <script type="text/javascript" src="Scripts/App/Data.js"></script>
+    <script type="text/javascript" src="Scripts/App/Helper.js"></script>
+    <script type="text/javascript" src="Scripts/App/Events.js"></script>
+    <script type="text/javascript" src="Scripts/BootStrap.js"></script>
+
+    <link rel="stylesheet" href="Style/Style.css" />
+</head>
+<body>
+    <div id="divContainer" class="divContainer">
+        <br />
+        <div id="divAddContact" class="divAddContact">
+            <input id="txtFirstName" type="text" class="textBox" placeholder="First Name" />&nbsp;
+            <input id="txtLastName" type="text" class="textBox" placeholder="Last Name" />
+        </div>
+        <br />
+        <div class='divContactListHeader'>
+            <div class='contactItemDivHeader borderRadiusTopLeftBottomLeft'>First Name</div>
+            <div class='contactItemDivHeader'>Last Name</div>
+            <div class='contactItemDivHeader borderRadiusTopRightBottomRight'>&nbsp;</div>
+        </div>
+        <div id="divContactList" class="divContactList">
+        </div>
+    </div>
+
+    <div id="divMessage" class="divMessage">
+        <span id="spanMessage"></span>
+    </div>
+    <div id="divUIBlocker" class="uiBlocker"></div>
+    <div id="divUpdateDialog" class="updateDialog">
+        <input id="txtUpdateFirstName" type="text" class="textBox" placeholder="First Name" />
+        <input id="txtUpdateLastName" type="text" class="textBox" placeholder="Last Name" /><br /><br />
+        <a href="#" class="dialogButton" id="lnkUpdateOk">Ok</a> &nbsp;
+        <a href="#" class="dialogButton" id="lnkUpdateClose">Cancel</a>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () { window.BootStrapApplication(); });
+    </script>
+</body>
+</html>
