@@ -1,13 +1,22 @@
 ﻿;
+/*JSContactManager.Events*/
 (function () {
     //Keypress event to add contact
-    function addContact (f, l) {
-        JSContactManager.Firebase.Datastore.push(new JSContactManager.Objects.Contact({ firstName: f, lastName: l }));
+    function addContact(firstName, lastName, birthDate, phone, address) {
+        var contact = new JSContactManager.Objects.Contact(
+            {
+                firstName: firstName,
+                lastName: lastName,
+                birthDate: birthDate,
+                phoneNumber: phone,
+                address: address
+            });
+        JSContactManager.Firebase.AddContact(contact);
+        JSContactManager.Helper.ScrollDownContactList();
     }
 
     //Event raised when a new child is added to the datastore
     function datastoreChildAdded(snapshot) {
-        JSContactManager.Events.CurrentEvent = 'ChildAdded';
         JSContactManager.Helper.DrawContactList(snapshot);
         JSContactManager.Helper.ShowContactAddMsg();
     }
@@ -20,18 +29,13 @@
 
     //Event raised when a new child is changed in the datastore
     function datastoreChildChanged(snapshot) {
-        if (JSContactManager.Events.CurrentEvent === 'ChildAdded') {
-            JSContactManager.Events.CurrentEvent = null;
-            return;
-        }
         JSContactManager.Helper.UpdateContactInList(snapshot);
         JSContactManager.Helper.ShowContactUpdateMsg();
     }
 
     //Event raised when when we want to delete any contact data object
     function deleteContact(id) {
-        var firebase = new Firebase(JSContactManager.Config.firebaseDatastore + id);
-        firebase.remove();
+        JSContactManager.Firebase.DeleteContact(id);
         return false;
     }
 
@@ -53,5 +57,4 @@
     JSContactManager.Events.DeleteContact = deleteContact;
     JSContactManager.Events.UpdateDialogOk = updateDialogOk;
     JSContactManager.Events.UpdateDialogClose = updateDialogClose;
-    JSContactManager.Events.CurrentEvent = null;
 })();

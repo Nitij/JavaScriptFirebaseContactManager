@@ -1,4 +1,5 @@
 ﻿;
+/*JSContactManager.Config*/
 (function () {
     JSContactManager.Config = new Object(
         {

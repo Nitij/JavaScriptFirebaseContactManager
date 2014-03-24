@@ -19,13 +19,41 @@
     <div id="divContainer" class="divContainer">
         <br />
         <div id="divAddContact" class="divAddContact">
-            <input id="txtFirstName" type="text" class="textBox" placeholder="First Name" />&nbsp;
-            <input id="txtLastName" type="text" class="textBox" placeholder="Last Name" />
+            <table class="updateDialogLayoutTable">
+                <tr>
+                    <td class="updateDialogLayoutTable tdLeft">First Name:&nbsp;</td>
+                    <td class="updateDialogLayoutTable tdRight">
+                        <input id="txtFirstName" type="text" class="textBox" placeholder="First Name" /></td>
+                </tr>
+                <tr>
+                    <td class="updateDialogLayoutTable tdLeft">Last Name:&nbsp;</td>
+                    <td class="updateDialogLayoutTable tdRight">
+                        <input id="txtLastName" type="text" class="textBox" placeholder="Last Name" /></td>
+                </tr>
+                <tr>
+                    <td class="updateDialogLayoutTable tdLeft">BirthDate:&nbsp;</td>
+                    <td class="updateDialogLayoutTable tdRight">
+                        <input id="txtBirthdate" type="date" class="textBox" /></td>
+                </tr>
+                <tr>
+                    <td class="updateDialogLayoutTable tdLeft">Phone Number:&nbsp;</td>
+                    <td class="updateDialogLayoutTable tdRight">
+                        <input id="txtPhone" type="text" class="textBox" placeholder="Phone Number" /></td>
+                </tr>
+                <tr>
+                    <td class="updateDialogLayoutTable tdLeft">Address:&nbsp;</td>
+                    <td class="updateDialogLayoutTable tdRight">
+                        <input id="txtAddress" type="text" class="textBox" placeholder="Address" /></td>
+                </tr>
+            </table>
+            <a href="#" class="addContactButton" id="lnkAddContact">Add New Contact</a>
         </div>
         <br />
         <div class='divContactListHeader'>
             <div class='contactItemDivHeader borderRadiusTopLeftBottomLeft'>First Name</div>
             <div class='contactItemDivHeader'>Last Name</div>
+            <div class='contactItemDivHeader'>BirthDate</div>
+            <div class='contactItemDivHeader'>Phone Number</div>
             <div class='contactItemDivHeader borderRadiusTopRightBottomRight'>&nbsp;</div>
         </div>
         <div id="divContactList" class="divContactList">
@@ -37,8 +65,36 @@
     </div>
     <div id="divUIBlocker" class="uiBlocker"></div>
     <div id="divUpdateDialog" class="updateDialog">
-        <input id="txtUpdateFirstName" type="text" class="textBox" placeholder="First Name" />
-        <input id="txtUpdateLastName" type="text" class="textBox" placeholder="Last Name" /><br /><br />
+        <div id="divUpdateDialogTitle" class="updateDialogTitle">Update Contact</div>
+        <table class="updateDialogLayoutTable">
+            <tr>
+                <td class="updateDialogLayoutTable tdLeft">First Name:&nbsp;</td>
+                <td class="updateDialogLayoutTable tdRight">
+                    <input id="txtUpdateFirstName" type="text" class="textBox" placeholder="First Name" /></td>
+            </tr>
+            <tr>
+                <td class="updateDialogLayoutTable tdLeft">Last Name:&nbsp;</td>
+                <td class="updateDialogLayoutTable tdRight">
+                    <input id="txtUpdateLastName" type="text" class="textBox" placeholder="Last Name" /></td>
+            </tr>
+            <tr>
+                <td class="updateDialogLayoutTable tdLeft">BirthDate:&nbsp;</td>
+                <td class="updateDialogLayoutTable tdRight">
+                    <input id="txtUpdateBirthDate" type="date" class="textBox" /></td>
+            </tr>
+            <tr>
+                <td class="updateDialogLayoutTable tdLeft">Phone Number:&nbsp;</td>
+                <td class="updateDialogLayoutTable tdRight">
+                    <input id="txtUpdatePhone" type="text" class="textBox" placeholder="Phone Number" /></td>
+            </tr>
+            <tr>
+                <td class="updateDialogLayoutTable tdLeft">Address:&nbsp;</td>
+                <td class="updateDialogLayoutTable tdRight">
+                    <input id="txtUpdateAddress" type="text" class="textBox" placeholder="Address" /></td>
+            </tr>
+        </table>
+        <br />
+        <br />
         <a href="#" class="dialogButton" id="lnkUpdateOk">Ok</a> &nbsp;
         <a href="#" class="dialogButton" id="lnkUpdateClose">Cancel</a>
     </div>
