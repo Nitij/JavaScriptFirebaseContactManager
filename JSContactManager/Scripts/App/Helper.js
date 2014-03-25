@@ -160,7 +160,7 @@ JSContactManager.HelperBuilder = function ($, w, undefined) {
     };
 
     //Method to show round message box at the top of the screen
-    var showMessage = function (backgroundColor, message, timeout, fadeOutSpeed) {
+    var showMessage = function (backgroundColor, message, timeout, fadeOutSpeed) {        
         $divMessage.css('background-color', backgroundColor);
         $divMessage.css('top', $w.scrollTop());
         $divMessage.find('#spanMessage').text(message);

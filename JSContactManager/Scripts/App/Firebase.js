@@ -5,12 +5,27 @@
 
     //Method to add a new contact to the datastore
     var addContact = function (contact) {
-        JSContactManager.Firebase.Datastore.push(contact);
+        JSContactManager.Firebase.Datastore.push(
+            {
+                firstName: contact.firstName,
+                lastName: contact.lastName,
+                birthDate: contact.birthDate,
+                phoneNumber: contact.phoneNumber,
+                address: contact.address
+            });
     }
 
     //Method to update an existng contact
     var updateContact = function (id, contact) {
-        JSContactManager.Firebase.Datastore.child(id).set(contact);
+        debugger;
+        JSContactManager.Firebase.Datastore.child(id).set(
+            {
+                firstName: contact.firstName,
+                lastName: contact.lastName,
+                birthDate: contact.birthDate,
+                phoneNumber: contact.phoneNumber,
+                address: contact.address
+            });
     }
 
     //Method to delete an existing contact
