@@ -17,6 +17,8 @@
 
     //Event raised when a new child is added to the datastore
     function datastoreChildAdded(snapshot) {
+        var childData = new Firebase(JSContactManager.Config.firebaseDatastore + snapshot.name());
+        childData.on('child_changed', JSContactManager.Events.DatastoreChildChanged);
         JSContactManager.Helper.DrawContactList(snapshot);
         JSContactManager.Helper.ShowContactAddMsg();
     }
@@ -29,7 +31,10 @@
 
     //Event raised when a new child is changed in the datastore
     function datastoreChildChanged(snapshot) {
-        JSContactManager.Helper.UpdateContactInList(snapshot);
+        debugger;
+        var parentName = JSContactManager.Firebase.GetParentName(snapshot),
+            parent = JSContactManager.Firebase.GetParent(snapshot)
+        JSContactManager.Helper.UpdateContactInList(parentName, parent);
         JSContactManager.Helper.ShowContactUpdateMsg();
     }
 

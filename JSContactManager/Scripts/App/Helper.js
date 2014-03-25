@@ -48,9 +48,8 @@ JSContactManager.HelperBuilder = function ($, w, undefined) {
     };
 
     //Update existing contact from contact list
-    var updateContactInList = function (snapshot) {
-        var id = snapshot.name(),
-            contact = snapshot.val(),
+    var updateContactInList = function (id, snapshot) {
+        var contact = snapshot.val(),
             $divContact = null;
 
         $divContact = $divContactList.find('div[contactId="' + id + '"]');

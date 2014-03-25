@@ -19,8 +19,20 @@
         firebase.remove();
     }
 
+    //Returns the name of the parent of the snapshot passed
+    var getParentName = function (snapshot) {
+        return snapshot.ref().parent().name();
+    };
+
+    //Returns the parent of the snapshot passed
+    var getParent = function (snapshot) {
+        return snapshot.ref().parent();
+    };
+
     //Add the to the firebase namespace
     JSContactManager.Firebase.AddContact = addContact;
     JSContactManager.Firebase.UpdateContact = updateContact;
     JSContactManager.Firebase.DeleteContact = deleteContact;
+    JSContactManager.Firebase.GetParentName = getParentName;
+    JSContactManager.Firebase.GetParent = getParent;
 })();

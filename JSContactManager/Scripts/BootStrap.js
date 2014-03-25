@@ -58,7 +58,7 @@
 
         JSContactManager.Firebase.Datastore.on('child_added', JSContactManager.Events.DatastoreChildAdded);
         JSContactManager.Firebase.Datastore.on('child_removed', JSContactManager.Events.DatastoreChildRemoved);
-        JSContactManager.Firebase.Datastore.on('child_changed', JSContactManager.Events.DatastoreChildChanged);
+        //JSContactManager.Firebase.Datastore.on('child_changed', JSContactManager.Events.DatastoreChildChanged);
     }
 
     w['BootStrapApplication'] = bootstrapApplication;
