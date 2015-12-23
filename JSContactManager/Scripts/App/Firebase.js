@@ -17,7 +17,6 @@
 
     //Method to update an existng contact
     var updateContact = function (id, contact) {
-        debugger;
         JSContactManager.Firebase.Datastore.child(id).set(
             {
                 firstName: contact.firstName,
